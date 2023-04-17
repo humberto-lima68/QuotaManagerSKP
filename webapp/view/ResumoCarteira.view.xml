@@ -1,0 +1,54 @@
+<mvc:View height="100%" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout"
+	xmlns:semantic="sap.f.semantic" controllerName="exed.com.quotamanagerskp.controller.ResumoCarteira"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<semantic:SemanticPage id="mySemanticPage" headerPinnable="true" toggleHeaderOnTitleClick="true" preserveHeaderStateOnScroll="false"
+		titleAreaShrinkRatio="1:1.6:1.6" showFooter="true">
+		<!-- Title Heading-->
+		<semantic:titleHeading>
+			<Title id="_IDEGen_title0" text="ATP Balance Summary"/>
+		</semantic:titleHeading>
+		<!-- TitleExpanded content-->
+		<!-- TitleSnapped content-->
+		<semantic:titleExpandedContent>
+			<ObjectAttribute title="Account Manager" text=" " id="_IDEGen_text0"/>
+		</semantic:titleExpandedContent>
+		
+		<!-- Content -->
+		<semantic:content>
+			<Table id="tableResumo" showSeparators="All" growing="true" growingScrollToLoad="true" items="{ path: 'ResumoCarteira>/'}"
+				class="ColumnListItemResumo" updateFinished="onModelContextChange">
+				<columns>
+					<Column id="_IDEGen_column0" width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Phone" popinDisplay="Inline" mergeDuplicates="false" demandPopin="true">
+						<ObjectIdentifier id="obj1" title="Client"/>
+					</Column>
+						<Column id="_IDEGen_column2" width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Phone" popinDisplay="Inline" mergeDuplicates="false" demandPopin="true">
+						<ObjectIdentifier id="obj3" title="ATP Balance"/>
+					</Column>
+					<Column id="_IDEGen_column3" width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Phone" popinDisplay="Inline" mergeDuplicates="false" demandPopin="true">
+						<ObjectIdentifier id="obj4" title="New ATP Balance"/>
+					</Column>
+				</columns>
+				<ColumnListItem id="_IDEGen_columnlistitem0" >
+					<cells>
+						<ObjectIdentifier text="{ResumoCarteira>KunnrName}"  titleActive="true" visible="true" id="oi050"/>
+						<ObjectIdentifier  text="{ResumoCarteira>BrDisponivel}" titleActive="true" visible="true" id="oi051"/>
+						<ObjectIdentifier  text="{ResumoCarteira>SaldoATPnovo}" titleActive="true" visible="true" id="oi052"/>
+					</cells>
+				</ColumnListItem>
+			</Table>
+		</semantic:content>
+		<semantic:closeAction>
+			<semantic:CloseAction id="closeColumn" press=".onCloseDetailPress"/>
+		</semantic:closeAction>
+		<semantic:positiveAction>
+			<semantic:PositiveAction text="Confirm" id="onAceitePress" press="onPressResumo"/>
+		</semantic:positiveAction >
+		<semantic:negativeAction>
+			<semantic:NegativeAction text="Cancel" press=".onCloseDetailPress"/>
+		</semantic:negativeAction>
+		<semantic:messagesIndicator>
+			<semantic:MessagesIndicator press="onMessagesButtonPress"/>
+		</semantic:messagesIndicator>
+		<!-- Custom Footer Content-->
+	</semantic:SemanticPage>
+</mvc:View>

@@ -1,0 +1,31 @@
+
+
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:semantic="sap.m.semantic"
+	controllerName="exed.com.quotamanagerskp.controller.Detail">
+	<semantic:MasterPage id="page" title="{i18n>MaterPageTitle}" navButtonPress="onNavBack" showNavButton="true">
+		<semantic:subHeader>
+			<Bar id="headerBar">
+				<contentMiddle>
+					<SearchField id="searchField" showRefreshButton="{= !${device>/support/touch} }" tooltip="{i18n>masterSearchTooltip}" width="100%"
+						search="onSearch" placeholder="{i18n>listSearchField}"/>
+				</contentMiddle>
+			</Bar>
+		</semantic:subHeader>
+		<semantic:content>
+			<!--<PullToRefresh id="pullToRefresh" visible="{device>/support/touch}" refresh="onRefresh"/>-->
+			<!-- For client side filtering add this to the items attribute:  parameters: {operationMode: 'Client'}}" -->
+			<List  id="list" class="List0" items="{ path: '/cota_gcskuSet'}" busyIndicatorDelay="{masterView>/delay}"
+				noDataText="{masterView>/noDataText}" mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster'}" growing="true"
+				growingScrollToLoad="true" updateFinished="onUpdateFinished" selectionChange="onSelectionChange" itemPress="onSelectionChange">
+				<infoToolbar>
+					<Toolbar id="filterBar" visible="{masterView>/isFilterBarVisible}" press="onOpenViewSettings">
+						<Title id="filterBarLabel" text="{masterView>/filterBarLabel}"/>
+					</Toolbar>
+				</infoToolbar>
+				<items>
+					<ObjectListItem id="_IDEGen_objectlistitem0" intro="{NameSkup}" title ="{ZzbrAtpskp} " type="Active" press="onSelectionChange" ></ObjectListItem>
+				</items>
+			</List>
+		</semantic:content>
+	</semantic:MasterPage>
+</mvc:View>

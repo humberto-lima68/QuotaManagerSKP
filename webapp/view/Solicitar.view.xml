@@ -1,0 +1,81 @@
+<mvc:View height="100%" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout"
+	xmlns:semantic="sap.f.semantic" controllerName="exed.com.quotamanagerskp.controller.Solicitar" xmlns:html="http://www.w3.org/1999/xhtml">
+	<semantic:SemanticPage id="mySemanticPage" headerPinnable="true" toggleHeaderOnTitleClick="true" preserveHeaderStateOnScroll="false"
+		titleAreaShrinkRatio="1:1.6:1.6" showFooter="true">
+		<!-- Title Heading-->
+		<semantic:titleHeading>
+			<Title id="_IDEGen_title0" text="Request Quota"/>
+				 
+		</semantic:titleHeading>
+		<semantic:titleExpandedContent>
+			<ObjectAttribute title="Account Manager" text=" " id="_IDEGen_text0"/>
+		</semantic:titleExpandedContent>
+		<semantic:headerContent>
+			<layout:HorizontalLayout id="_IDEGen_horizontallayout0" allowWrapping="true">
+				<layout:VerticalLayout id="_IDEGen_verticallayout0" class="sapUiMediumMarginEnd">
+					<ObjectIdentifier id="_IDEGen_objectidentifier0" title="Preveious Balance"/>
+					<ObjectAttribute title="{Kunnr}" text="{KunnrName} - {Ort01} - {Regio}" id="oli40"/>
+					<ObjectAttribute title="Material" text="{ZzbrAtpskp}" id="oli41"/>
+					<ObjectAttribute title="Free Sales Plan" text="{Zplvendalivre}" id="oli43"/>
+				</layout:VerticalLayout>
+			</layout:HorizontalLayout>
+		</semantic:headerContent>
+		<!-- Content -->
+		<semantic:content>
+			<Table id="mclist1" width="auto" noDataText="No data" showSeparators="All" growing="true" growingThreshold="30" growingScrollToLoad="true"
+				items="{ path: '/cota_outrogcSet'}" class="sapUiResponsiveMargin" itemPress="_onTableItemPress">
+				<headerToolbar>
+					<OverflowToolbar id="_IDEGen_overflowtoolbar0">
+						<content>
+							<SearchField class="aSearch" width="100%" placeholder="Search customer or SAP code" id="SearchFieldRemanejar" search=".onSearch"/>
+						</content>
+					</OverflowToolbar>
+				</headerToolbar>
+				<columns>
+					<Column id="_IDEGen_column0" width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Phone" popinDisplay="Inline" mergeDuplicates="false"
+						demandPopin="true">
+						<ObjectIdentifier id="obj2" title="Account Manager"/>
+					</Column>
+					<Column id="_IDEGen_column1" width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Phone" popinDisplay="Inline" mergeDuplicates="false"
+						demandPopin="true">
+						<ObjectIdentifier id="_IDEGen_text1" title="Free Sales Plan"/>
+					</Column>
+					<Column visible="true" id="_IDEGen_column2" width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Phone" demandPopin="true"
+						popinDisplay="Block" mergeDuplicates="false">
+						<ObjectIdentifier id="_IDEGen_text2" title="ATP Balance"/>
+					</Column>
+					<Column visible="true" id="_IDEGen_column3" width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Phone" popinDisplay="Block"
+						mergeDuplicates="false" demandPopin="true">
+						<ObjectIdentifier id="_IDEGen_text3" title="Change Quota"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="_IDEGen_columnlistitem0" xmlns="sap.m" type="Active" press="handleLineItemPress" vAlign="Middle">
+						<cells>
+							<ObjectIdentifier text="{Kunn2Name}" titleActive="true" visible="true" id="ObjectIdentifierRemanejarKunnr"/>
+							<ObjectIdentifier text="{Zplvendalivre}" title="" titleActive="true" visible="true" id="ObjectIdentifierRemanejarPVLivre"/>
+							<ObjectIdentifier text="{BrDisponivel}" title="" titleActive="true" visible="true" id="ObjectIdentifierRemanejarSaldoAtp1"/>
+							<Input width="auto" id="qtde" placeholder="Change Quota " enabled="true" maxLength="13" class="qtde" valueState="None"
+								liveChange="onLiveChange"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</semantic:content>
+	
+		<semantic:closeAction>
+			<semantic:CloseAction id="closeColumn" press=".onCloseDetailPress"/>
+		</semantic:closeAction>
+		<semantic:positiveAction>
+			<semantic:PositiveAction text="Request" id="onAceitePress" press="onPressResumoSolicitacao"/>
+		</semantic:positiveAction >
+		<semantic:negativeAction>
+			<semantic:NegativeAction text="Cancel" id="idCancelPress" press=".onCloseDetailPress"/>
+		</semantic:negativeAction>
+		<semantic:messagesIndicator>
+			<semantic:MessagesIndicator/>
+		</semantic:messagesIndicator>
+	
+		<!-- Custom Footer Content-->
+	</semantic:SemanticPage>
+</mvc:View>

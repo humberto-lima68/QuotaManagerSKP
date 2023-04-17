@@ -1,0 +1,33 @@
+[{
+	"Kunn2": "PMonteiro",
+	"ZzbrAtpskp": "CP 141 PL14",
+	"Kunn2Name": "Paulo Monteiro",
+	"NameSkup": "CP 141 PL14",
+	"BrFcst": "12.500",
+	"BrConsq": "12.500",
+	"BrDisponivel": "25.000",
+	"BrQtdsolicitar": "0.000",
+	"Uom": "Ton",
+	"Zuserid": "PMonteiro",
+	"Zwmengconfirmar": "12.500",
+	"Saldo_remmax": "0.000",
+	"Zplvendalivre": "12.500",
+	"__metadata": {
+		"uri": "cota_outrogcSet('Kunn2%201')",
+		"type": "ZGW_APO_COTA_SRV.cota_outrogc"
+	}
+}, {
+	"Kunn2": "Acetoze1",
+	"ZzbrAtpskp": "CP 141 PL14",
+	"Kunn2Name": "Antônio Luis Acetoze",
+	"NameSkup": "CP 141 PL14",
+	"BrFcst": "25.000",
+	"BrConsq": "12.500",
+	"BrDisponivel": "25.000",
+	"BrQtdsolicitar": "0.000",
+	"Uom": "Ton",
+	"Zuserid": "Acetoze1",
+	"Zwmengconfirmar": "25.000",
+	"Saldo_remmax": "0.000",
+	"Zplvendalivre": "25.000"
+}]

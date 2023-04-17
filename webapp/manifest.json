@@ -1,0 +1,230 @@
+{
+    "_version": "1.12.0",
+    "sap.app": {
+        "id": "exed.com.quotamanagerskp",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "resources": "resources.json",
+        "dataSources": {
+            "mainService": {
+                "uri": "/here/goes/your/serviceurl/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0",
+                    "localUri": "localService/metadata.xml"
+                }
+            }
+        },
+        "sourceTemplate": {
+            "id": "sap.ui.ui5-template-plugin.2masterdetail",
+            "version": "1.110.1",
+            "toolsId": "123beb03-5b4c-4a35-87f8-a430d69429a2"
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "sap-icon://detail-view",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "rootView": {
+            "viewName": "exed.com.quotamanagerskp.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "app"
+        },
+        "dependencies": {
+            "minUI5Version": "1.66.0",
+            "libs": {
+                "sap.ui.core": {},
+                "sap.m": {},
+                "sap.f": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "exed.com.quotamanagerskp.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true
+            }
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.f.routing.Router",
+                "viewType": "XML",
+                "viewPath": "exed.com.quotamanagerskp.view",
+                "controlId": "layout",
+                "controlAggregation": "beginColumnPages",
+                "bypassed": {
+                    "target": "notFound"
+                },
+                "async": true
+            },
+            "routes": [
+                {
+                    "pattern": "",
+                    "name": "master",
+                    "target": "master"
+                },
+                {
+                    "pattern": "zapo_acessoSet/{objectId}",
+                    "name": "object",
+                    "target": [
+                        "master",
+                        "object"
+                    ]
+                },
+                {
+                    "name": "Remanejar",
+                    "pattern": "remanejar/{Skup}/{Zuserid}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "master",
+                        "Remanejar"
+                    ]
+                },
+                {
+                    "name": "Solicitar",
+                    "pattern": "solicitar/{kunnr}/{ZzbrAtpskp}/{zuserid}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "master",
+                        "Solicitar"
+                    ]
+                },
+                {
+                    "name": "ResumoCarteira",
+                    "pattern": "resumoCarteira/{Skup}/{Zuserid}/{BrMaster}/{BrMasterNew}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "master",
+                        "ResumoCarteira"
+                    ]
+                },
+                {
+                    "name": "RemanejamentoSucesso",
+                    "pattern": "remanejamentoSucesso/{Skup}/{Zuserid}/{BrMaster}/{BrMasterNew}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "master",
+                        "RemanejamentoSucesso"
+                    ]
+                },
+                {
+                    "name": "ResumoSolicitar",
+                    "pattern": "ResumoSolicitar/{kunnr}/{ZzbrAtpskp}/{Zuserid}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "master",
+                        "ResumoSolicitar"
+                    ]
+                },
+                {
+                    "name": "SolicitarSucesso",
+                    "pattern": "SolicitarSucesso/{kunnr}/{Chave}/{ZzbrAtpskp}/{Zuserid}",
+                    "titleTarget": "",
+                    "greedy": false,
+                    "target": [
+                        "master",
+                        "SolicitarSucesso"
+                    ]
+                }
+            ],
+            "targets": {
+                "master": {
+                    "viewName": "Master",
+                    "viewLevel": 1,
+                    "viewId": "master"
+                },
+                "object": {
+                    "viewName": "Detail",
+                    "viewId": "detail",
+                    "viewLevel": 1,
+                    "controlAggregation": "midColumnPages"
+                },
+                "detailObjectNotFound": {
+                    "viewName": "DetailObjectNotFound",
+                    "viewId": "detailObjectNotFound",
+                    "controlAggregation": "midColumnPages"
+                },
+                "notFound": {
+                    "viewName": "NotFound",
+                    "viewId": "notFound"
+                },
+                "Remanejar": {
+                    "viewType": "XML",
+                    "viewName": "Remanejar",
+                    "title": "Remanejar",
+                    "viewId": "Remanejar",
+                    "controlAggregation": "midColumnPages"
+                },
+                "Solicitar": {
+                    "viewType": "XML",
+                    "viewName": "Solicitar",
+                    "controlAggregation": "midColumnPages",
+                    "title": "Solicitar",
+                    "viewId": "Solicitar"
+                },
+                "ResumoCarteira": {
+                    "viewType": "XML",
+                    "viewName": "ResumoCarteira",
+                    "controlAggregation": "midColumnPages",
+                    "title": "ResumoCarteira",
+                    "viewId": "ResumoCarteira"
+                },
+                "RemanejamentoSucesso": {
+                    "viewType": "XML",
+                    "viewName": "RemanejamentoSucesso",
+                    "title": "RemanejamentoSucesso",
+                    "viewId": "RemanejamentoSucesso",
+                    "controlAggregation": "midColumnPages"
+                },
+                "ResumoSolicitar": {
+                    "viewType": "XML",
+                    "viewName": "ResumoSolicitar",
+                    "title": "ResumoSolicitar",
+                    "viewId": "ResumoSolicitar",
+                    "controlAggregation": "midColumnPages"
+                },
+                "SolicitarSucesso": {
+                    "viewType": "XML",
+                    "viewName": "SolicitarSucesso",
+                    "controlAggregation": "midColumnPages",
+                    "title": "SolicitarSucesso",
+                    "viewId": "SolicitarSucesso"
+                }
+            }
+        },
+        "flexEnabled": true
+    }
+}

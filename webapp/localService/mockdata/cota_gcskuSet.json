@@ -1,0 +1,23 @@
+[{
+	"Zuname": "Acetoze1",
+	"Kunn2": "Kunn2 1",
+	"ZzbrAtpskp": "CP 141 PL14",
+	"NameSkup": "CP 141 PL14",
+	"Znomegc": "Acetoze1",
+	"Zsearch": "",
+	"__metadata": {
+		"uri": "cota_gcskuSet('ZzbrAtpskp%201')",
+		"type": "ZGW_APO_COTA_SRV.cota_gcsku"
+	}
+}, {
+	"Zuname": "AMartins",
+	"Kunn2": "Kunn2 3",
+	"ZzbrAtpskp": "CP 141 PL14",
+	"NameSkup": "CP 141 PL14",
+	"Znomegc": "AMartins",
+	"Zsearch": "",
+	"__metadata": {
+		"uri": "cota_gcskuSet('ZzbrAtpskp%203')",
+		"type": "ZGW_APO_COTA_SRV.cota_gcsku"
+	}
+}]

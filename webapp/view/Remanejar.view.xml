@@ -1,0 +1,95 @@
+<mvc:View height="100%" xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:layout="sap.ui.layout"
+	xmlns:semantic="sap.f.semantic" controllerName="exed.com.quotamanagerskp.controller.Remanejar" xmlns:html="http://www.w3.org/1999/xhtml">
+	<semantic:SemanticPage id="mySemanticPage" headerPinnable="true" toggleHeaderOnTitleClick="true" preserveHeaderStateOnScroll="false"
+		titleAreaShrinkRatio="1:1.6:1.6" showFooter="true">
+		<!-- Title Heading-->
+		<semantic:titleHeading>
+			<Title id="_IDEGen_title0" text="Material Balance - {ZzbrAtpskp}"/>
+		</semantic:titleHeading>
+		<!-- TitleExpanded content-->
+		<!-- TitleSnapped content-->
+		<semantic:titleExpandedContent>
+			<ObjectAttribute title="Account Manager" text=" " id="_IDEGen_text0"/>
+		</semantic:titleExpandedContent>
+		
+		<semantic:headerContent>
+			<layout:HorizontalLayout id="_IDEGen_horizontallayout0" allowWrapping="true">
+				<layout:VerticalLayout id="_IDEGen_verticallayout0" class="sapUiMediumMarginEnd">
+					<ObjectIdentifier id="_IDEGen_objectidentifier0" title="Preveious Balance"/>
+					<ObjectAttribute title="Total Balance ATP" text="{Brdisponivel}{Uom}" id="oli43"/>
+					<ObjectAttribute title="Free Sales Plan" text="{Zplvendalivre}" id="oli44"/>
+					<ObjectAttribute title="Total" text="{Brquota}{Uom}" id="oli45"/>
+				</layout:VerticalLayout>
+				<layout:VerticalLayout id="_IDEGen_verticallayout1">
+					<ObjectIdentifier id="_IDEGen_objectidentifier1" title="Ajusted Balance"/>
+					<ObjectAttribute title="Total Balance ATP" text="{Brdisponivel}{Uom}" id="oli46"/>
+					<ObjectAttribute title="Free Sales Plan" text="{Zplvendalivre}" id="qtdeMst"/>
+					<ObjectAttribute title="Total" text="{Brquota}{Uom}" id="oli48"/>
+				</layout:VerticalLayout>
+				<layout:VerticalLayout id="_IDEGen_verticallayout2">
+					<ObjectStatus id="oli50" text=" " state="None" icon=""/>
+					<ObjectStatus id="oli41" text=" " state="None" icon=""/>
+					<ObjectStatus id="oli52" text=" " state="None" icon=""/>
+					<ObjectStatus id="oli49" text=" " state="None" icon=""/>
+				</layout:VerticalLayout>
+			</layout:HorizontalLayout>
+		</semantic:headerContent>
+		<!-- Content -->
+		<semantic:content>
+			<Table id="list" width="auto" noDataText="No data" showSeparators="All" growing="true" growingThreshold="30" growingScrollToLoad="true"
+				items="{ path: '/cota_gcSet'}" class="sapUiResponsiveMargin" itemPress="_onTableItemPress">
+				<headerToolbar>
+					<OverflowToolbar id="_IDEGen_overflowtoolbar0">
+						<content>
+							<SearchField class="aSearch" width="100%" placeholder="Search customer or SAP code" id="SearchFieldRemanejar" search=".onSearch"/>
+						</content>
+					</OverflowToolbar>
+				</headerToolbar>
+				<columns>
+					<Column id="_IDEGen_column0" width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Phone" popinDisplay="Inline" mergeDuplicates="false"
+						demandPopin="true">
+						<ObjectIdentifier id="obj2" title="Client"/>
+					</Column>
+					<Column id="_IDEGen_column1" width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Phone" popinDisplay="Inline" mergeDuplicates="false"
+						demandPopin="true">
+						<ObjectIdentifier id="_IDEGen_text1" title="Free Sales Plan"/>
+					</Column>
+					<Column visible="true" id="_IDEGen_column2" width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Phone" demandPopin="true"
+						popinDisplay="Block" mergeDuplicates="false">
+						<ObjectIdentifier id="_IDEGen_text2" title="ATP Balance"/>
+					</Column>
+					<Column visible="true" id="_IDEGen_column3" width="auto" hAlign="Left" vAlign="Middle" minScreenWidth="Phone" popinDisplay="Block"
+						mergeDuplicates="false" demandPopin="true">
+						<ObjectIdentifier id="_IDEGen_text3" title="Change Quota"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem  id="_IDEGen_columnlistitem0" xmlns="sap.m" type="Navigation" press="handleLineItemPress" vAlign="Middle">
+						<cells>
+							<ObjectIdentifier title="{Kunnr}" text="{KunnrName} - {Ort01} - {Regio}" titleActive="true" visible="true"
+								id="ObjectIdentifierRemanejarKunnr"/>
+							<ObjectIdentifier text="{Zplvendalivre}" title="" titleActive="true" visible="true" id="ObjectIdentifierRemanejarPVLivre"/>
+			  
+							<ObjectIdentifier text="{BrDisponivel}" title="" titleActive="true" visible="true" id="ObjectIdentifierRemanejarSaldoAtp1"/>
+							<Input width="auto" id="qtde" placeholder="Change Quota " enabled="true" maxLength="13" class="qtde" valueState="None"
+								liveChange="onLiveChange"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</semantic:content>
+		<semantic:closeAction>
+			<semantic:CloseAction id="closeColumn" press=".onCloseDetailPress"/>
+		</semantic:closeAction>
+		<semantic:positiveAction>
+			<semantic:PositiveAction text="Relocation" id="onAceitePress" press="onPressResumocarteira"/>
+		</semantic:positiveAction >
+		<semantic:negativeAction>
+			<semantic:NegativeAction text="Cancel" press=".onCloseDetailPress" />
+		</semantic:negativeAction>
+		<semantic:messagesIndicator>
+			<semantic:MessagesIndicator press="onMessagesButtonPress"/>
+		</semantic:messagesIndicator>
+		<!-- Custom Footer Content-->
+	</semantic:SemanticPage>
+</mvc:View>

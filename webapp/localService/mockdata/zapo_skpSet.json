@@ -1,0 +1,17 @@
+[{
+	"Zuserid": "Acetoze1",
+	"ZzbrAtpskp": "CP 141 PL14",
+	"Nameskp": "CP 141 PL14",
+	"__metadata": {
+		"uri": "zapo_skpSet('ZzbrAtpskp%201')",
+		"type": "ZGW_APO_COTA_SRV.zapo_skp"
+	}
+}, {
+	"Zuserid": "Acetoze1",
+	"ZzbrAtpskp": "CP 141 BR25",
+	"Nameskp": "CP 141 BR25",
+	"__metadata": {
+		"uri": "zapo_skpSet('ZzbrAtpskp%202')",
+		"type": "ZGW_APO_COTA_SRV.zapo_skp"
+	}
+}]

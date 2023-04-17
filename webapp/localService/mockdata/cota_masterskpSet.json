@@ -1,0 +1,21 @@
+[{
+	"Zuserid": "Acetoze1",
+	"ZzbrAtpskp": "CP 141 PL14",
+	"Brmaster": "12,500",
+	"Brdisponivel": "25,000",
+	"Brquota": "6,250",
+	"__metadata": {
+		"uri": "cota_masterskpSet(Zuserid='Zuserid%201',ZzbrAtpskp='ZzbrAtpskp%201')",
+		"type": "ZGW_APO_COTA_SRV.cota_masterskp"
+	}
+}, {
+	"Zuserid": "AMartins",
+	"ZzbrAtpskp": "CP 141 PL14",
+	"Brmaster": "12,500",
+	"Brdisponivel": "25,000",
+	"Brquota": "6,250",
+	"__metadata": {
+		"uri": "cota_masterskpSet(Zuserid='Zuserid%202',ZzbrAtpskp='ZzbrAtpskp%202')",
+		"type": "ZGW_APO_COTA_SRV.cota_masterskp"
+	}
+}]
